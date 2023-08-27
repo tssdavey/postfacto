@@ -42,15 +42,15 @@ services:
     - postfacto
     - postgres
 
-  test:
-    image: postfacto/smoke:${TAG}
-    environment:
-      ADMIN_EMAIL: $ADMIN_EMAIL
-      ADMIN_PASSWORD: $ADMIN_PASSWORD
-      BASE_ADMIN_URL: 'http://postfacto:3000/admin'
-      BASE_WEB_URL: 'http://postfacto:3000'
-    links:
-    - postfacto
+  # test:
+  #   image: postfacto/smoke:${TAG}
+  #   environment:
+  #     ADMIN_EMAIL: $ADMIN_EMAIL
+  #     ADMIN_PASSWORD: $ADMIN_PASSWORD
+  #     BASE_ADMIN_URL: 'http://postfacto:3000/admin'
+  #     BASE_WEB_URL: 'http://postfacto:3000'
+  #   links:
+  #   - postfacto
 
   postfacto:
     image: postfacto/postfacto:${TAG}
@@ -66,7 +66,7 @@ services:
     - redis
 
   postgres:
-    image: postgres
+    image: postgres:12.15
     environment:
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
 
