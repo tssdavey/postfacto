@@ -48,12 +48,12 @@ version: 0.5.0-beta
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
-appVersion: latest
+appVersion: dev
 
 dependencies:
   - name: postgresql
-    version: 6.5.0
+    version: 12.10.0
     repository: "@bitnami"
   - name: redis
-    version: 9.4.3
+    version: 17.14.6
     repository: "@bitnami"

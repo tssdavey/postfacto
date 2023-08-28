@@ -28,6 +28,7 @@
 #
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+
 replicaCount: 1
 
 image:
@@ -55,16 +56,15 @@ ingress:
   annotations: {}
   hosts:
     - host: chart-example.local
-      paths: []
+      # paths: []
   tls: []
 
 resources: {}
 
 nodeSelector: {}
 
-disableSSLRedirect:
-googleOAuthClientId:
-secretKeyBase:
+disableSSLRedirect: true
+secretKeyBase: "secret_key"
 
 redis:
   cluster:
@@ -73,3 +73,9 @@ redis:
 tolerations: []
 
 affinity: {}
+
+global:
+  postgresql:
+    auth:
+      username: "myuser"
+      database: "my-db"
